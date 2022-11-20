@@ -593,7 +593,7 @@ namespace SHVDN
 				try
 				{
 					// Resume script thread and execute any incoming tasks from it
-					while ((finishedInTime = SignalAndWait(script.continueEvent, script.waitEvent, 5000)) && taskQueue.Count > 0)
+					while ((finishedInTime = SignalAndWait(script.continueEvent, script.waitEvent)) && taskQueue.Count > 0)
 						taskQueue.Dequeue().Run();
 				}
 				catch (Exception ex)
